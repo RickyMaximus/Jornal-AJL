@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinema por R$ 10 — Café com José Leite</title>
+  <link rel="stylesheet" href="/Frontend/CSS/style.css" />
+  <link rel="stylesheet" href="/frontend/CSS/style.css" />
+  <style>
+    .menu-btn{background:transparent;border:0}
+    .mobile-only{display:none}@media(max-width:900px){.desktop-only{display:none}.mobile-only{display:inline-flex}}
+    .thumb img,.hero img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+  </style>
+</head>
+<body class="page-article">
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="nav desktop-only">
+        <a href="../index.html">Início</a>
+        <a href="../comunicados.html">Comunicados</a>
+        <a href="../eventos.html">Eventos</a>
+        <a href="../tempo.html">Tempo</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn mobile-only" aria-label="Abrir menu">☰</button>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu">
+      <a href="../index.html">Início</a><a href="../comunicados.html">Comunicados</a>
+      <a href="../eventos.html">Eventos</a><a href="../tempo.html">Tempo</a>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <figure class="hero">
+          <img src="/frontend/IMG/cinema-hero.jpg" alt="Cartaz de cinema" />
+        </figure>
+        <div class="article-meta">
+          <span>Por <strong><a href="https://instagram.com/kety_vilasboas" target="_blank" rel="noopener">@kety_vilasboas</a></strong></span>
+          <span>•</span><span id="views">Visitas: 0</span>
+        </div>
+        <h1 class="article-title">Cinemas por apenas R$ 10 nessa semana?!</h1>
+        <p class="lead">A Cinemark colocou ingressos por R$ 10 na última semana de agosto para qualquer filme do catálogo. A promoção começou em 28/08 e vai até 03/09. Corre e garante o seu!</p>
+      </header>
+
+      <section class="article-body">
+        <h2>O que assistir</h2>
+        <p><strong>Quarteto Fantástico</strong> — Um grupo de astronautas retorna com poderes especiais e encara uma nova ameaça que pode colocar o planeta em risco. <em>Classificação: 12 anos</em>.</p>
+        <figure class="media"><img src="/frontend/IMG/cinema-foto1.jpg" alt="Quarteto Fantástico" /><figcaption></figcaption></figure>
+
+        <p><strong>Os Caras Malvados 2</strong> — A turma mais carismática do crime entra em um assalto de alto risco e precisa provar que está do lado certo. <em>Classificação: Livre</em>.</p>
+        <figure class="media"><img src="/frontend/IMG/cinema-foto2.jpg" alt="Os Caras Malvados 2" /><figcaption></figcaption></figure>
+
+        <p><strong>Superman</strong> — Uma jornada para conciliar a herança kryptoniana com a criação humana e o papel de herói. <em>Classificação: 14 anos</em>.</p>
+        <figure class="media"><img src="/frontend/IMG/cinema-foto3.jpg" alt="Superman" /><figcaption></figcaption></figure>
+      </section>
+
+      <section class="article-actions">
+        <button id="likeBtn" class="btn"><span id="likeIcon">♡</span> Curtir</button>
+        <span id="likeCount" class="muted">0</span>
+      </section>
+
+      <section class="comments">
+        <h3>Comentários</h3>
+        <form id="commentForm" class="comment-form">
+          <input id="commentInput" type="text" maxlength="300" placeholder="Escreva um comentário…" />
+          <button type="submit">Enviar</button>
+        </form>
+        <ul id="commentList" class="comment-list"></ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'cinema-10-reais', title: 'Cinema por R$ 10' });
+  </script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
