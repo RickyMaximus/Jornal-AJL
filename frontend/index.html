@@ -120,3 +120,126 @@
   <script src="./js/main.js" defer></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Café com José Leite — Jornal Escolar</title>
+
+  <!-- CSS da pasta correta -->
+  <link rel="stylesheet" href="./CSS/style.css" />
+
+  <!-- Ajustes mínimos sem mudar seu design -->
+  <style>
+    .menu-btn{background:transparent;border:0;padding:.5rem;cursor:pointer;border-radius:.5rem}
+    .mobile-only{display:none}
+    .desktop-only{display:flex;gap:1.25rem}
+    .mobile-menu{display:none}
+    @media (max-width: 900px){
+      .desktop-only{display:none}
+      .mobile-only{display:inline-flex}
+      .mobile-menu{
+        position:fixed;z-index:50;left:12px;right:12px;top:64px;
+        background:#fff;border:1px solid #e5e7eb;border-radius:12px;
+        padding:.5rem;box-shadow:0 10px 30px rgba(0,0,0,.08)
+      }
+      .mobile-menu a{display:block;padding:.75rem 1rem;border-radius:8px}
+      .mobile-menu a:hover{background:#f5f6f8}
+    }
+    .thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+    .hero img{width:100%;height:auto;display:block;object-fit:cover}
+    img{image-orientation:from-image}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="./index.html">Café com José Leite</a>
+
+      <!-- Desktop -->
+      <nav class="nav desktop-only">
+        <a href="./index.html">Início</a>
+        <a href="./Pages/comunicados.html">Comunicados</a>
+        <a href="./Pages/eventos.html">Eventos</a>
+        <a href="./Pages/tempo.html">Tempo</a>
+      </nav>
+
+      <!-- Mobile -->
+      <button id="menuBtn" class="menu-btn mobile-only" aria-label="Abrir menu">☰</button>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu">
+      <a href="./index.html">Início</a>
+      <a href="./Pages/comunicados.html">Comunicados</a>
+      <a href="./Pages/eventos.html">Eventos</a>
+      <a href="./Pages/tempo.html">Tempo</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero-card">
+      <figure class="hero">
+        <img src="./IMG/em-breve-teremos-novidades.jpg" alt="Em breve teremos novidades" />
+      </figure>
+      <div class="hero-text">
+        <small>JORNAL ESCOLAR — VERSÃO BETA</small>
+        <h1>As últimas da EE Prof. Antônio José Leite</h1>
+        <p>Notícias feitas pelos alunos, para a comunidade. Acompanhe também comunicados, eventos do Grêmio e a previsão do tempo.</p>
+        <a class="btn" href="./Pages/noticia-cinema.html">Ver matéria em destaque</a>
+      </div>
+    </section>
+
+    <section class="news-grid">
+      <h2>Últimas notícias</h2>
+
+      <article class="card">
+        <figure class="thumb">
+          <img src="./IMG/sala-de-cinema.jpeg" alt="Sala de cinema" />
+        </figure>
+        <div class="card-body">
+          <h3>Cinema por apenas R$ 10</h3>
+          <p>Dicas e filmes para aproveitar a promoção desta semana.</p>
+          <small>Por <a href="https://instagram.com/kety_vilasboas" target="_blank" rel="noopener">@kety_vilasboas</a></small>
+          <a class="btn" href="./Pages/noticia-cinema.html">Saiba mais</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="thumb">
+          <img src="./IMG/times-paulistas-card.jpg" alt="Escudos dos times paulistas" />
+        </figure>
+        <div class="card-body">
+          <h3>Times paulistas em 2025: altos e baixos</h3>
+          <p>Panorama do futebol paulista no ano.</p>
+          <small>Por <a href="https://instagram.com/souz.agp" target="_blank" rel="noopener">@souz.agp</a></small>
+          <a class="btn" href="./Pages/noticia-times-paulista.html">Saiba mais</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <figure class="thumb">
+          <img src="./IMG/predio.jpeg" alt="Fachada do condomínio vizinho" />
+        </figure>
+        <div class="card-body">
+          <h3>Projeto escolar: Investigadores da Natureza</h3>
+          <p>Alunos lideram conscientização ambiental e mobilizam o bairro.</p>
+          <small>Por <a href="https://instagram.com/escola_antonio_jose_leite" target="_blank" rel="noopener">@escola_antonio_jose_leite</a></small>
+          <a class="btn" href="./Pages/noticia-tenente.html">Saiba mais</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="social">
+      <p>Sigam nossas redes:
+        <a href="https://instagram.com/poderjovem_pj" target="_blank" rel="noopener">Grêmio (IG)</a> •
+        <a href="https://instagram.com/escola_antonio_jose_leite" target="_blank" rel="noopener">Escola (IG)</a> •
+        <a href="https://instagram.com/cafecomjoseleite" target="_blank" rel="noopener">Jornal & Podcast (IG)</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+  <script src="./js/main.js" defer></script>
+</body>
+</html>
