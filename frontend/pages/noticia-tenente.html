@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investigadores da Natureza — Projeto Tenente</title>
+  <link rel="stylesheet" href="/Frontend/CSS/style.css" />
+  <link rel="stylesheet" href="/frontend/CSS/style.css" />
+  <style>
+    .menu-btn{background:transparent;border:0}
+    .mobile-only{display:none}@media(max-width:900px){.desktop-only{display:none}.mobile-only{display:inline-flex}}
+    .media img,.hero img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+  </style>
+</head>
+<body class="page-article">
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="nav desktop-only">
+        <a href="../index.html">Início</a><a href="../comunicados.html">Comunicados</a>
+        <a href="../eventos.html">Eventos</a><a href="../tempo.html">Tempo</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn mobile-only" aria-label="Abrir menu">☰</button>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu">
+      <a href="../index.html">Início</a><a href="../comunicados.html">Comunicados</a>
+      <a href="../eventos.html">Eventos</a><a href="../tempo.html">Tempo</a>
+    </nav>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <figure class="hero">
+          <img src="/frontend/IMG/predio.jpeg" alt="Alunos no condomínio vizinho divulgando a ação" />
+        </figure>
+
+        <div class="article-meta">
+          <span>Por <strong><a href="https://instagram.com/escola_antonio_jose_leite" target="_blank" rel="noopener">@escola_antonio_jose_leite</a></strong></span>
+          <span>•</span><span id="views">Visitas: 0</span>
+        </div>
+
+        <h1 class="article-title">Investigadores da Natureza: o projeto da EMEF Tenente Aviador que mobilizou alunos e vizinhança</h1>
+
+        <p class="lead">No dia 13 de agosto de 2025, alunos do 3º ano da EMEF Tenente Aviador realizaram uma manifestação pacífica em defesa da higiene e do cuidado com o espaço público em frente à escola. Cartazes, cantos e muita consciência ambiental chamaram a atenção de moradores do condomínio vizinho.</p>
+      </header>
+
+      <section class="article-body">
+        <h2>De onde veio a ideia?</h2>
+        <p>A ação foi inspirada no livro <em>Investigadores da Natureza</em>, que trata de sustentabilidade e de formas de reciclar. A professora também alinhou o projeto com documentos da SME (Educação Ambiental, Alfabetização e PAP colaborativo), garantindo a participação das famílias.</p>
+
+        <figure class="media">
+          <img src="/frontend/IMG/tenente-livro.jpeg" alt="Capa do livro Investigadores da Natureza" />
+          <figcaption>Capa do livro que inspirou o projeto.</figcaption>
+        </figure>
+
+        <h2>O problema na porta da escola</h2>
+        <p>Muitos alunos chegavam com os tênis sujos por causa do lixo acumulado na calçada. A partir de conversas com os estudantes, a turma decidiu agir com uma campanha de conscientização para reforçar o respeito ao espaço público.</p>
+
+        <figure class="media">
+          <img src="/frontend/IMG/tenente-cartazes-1.jpeg" alt="Acrósticos feitos com as famílias" />
+          <figcaption>Acrósticos produzidos nas oficinas com as famílias.</figcaption>
+        </figure>
+
+        <figure class="media">
+          <img src="/frontend/IMG/tenente-cartazes-2.jpeg" alt="Acrósticos feitos pelos alunos" />
+          <figcaption>Mais produções com os 5Rs da sustentabilidade.</figcaption>
+        </figure>
+
+        <figure class="media">
+          <img src="/frontend/IMG/tenente-cartaz-vermelho.jpeg" alt="Cartaz vermelho com mensagens" />
+          <figcaption>Mensagens para repensar hábitos no bairro.</figcaption>
+        </figure>
+
+        <h2>Repercussão e apoio da vizinhança</h2>
+        <p>A manifestação foi registrada por moradores do condomínio, que procuraram a escola para dialogar e apoiar a iniciativa. Professores e estudantes relatam melhora na limpeza da calçada desde então.</p>
+
+        <figure class="media">
+          <img src="/frontend/IMG/predio.jpeg" alt="Fachada do condomínio ao lado da escola" />
+          <figcaption>Moradores participaram divulgando a ação.</figcaption>
+        </figure>
+
+        <h2>Próximos passos</h2>
+        <p>O projeto continua com novas ações previstas. Até o fim do ano, a equipe pretende ampliar a conscientização e buscar parcerias com a vizinhança e o comércio local.</p>
+      </section>
+
+      <section class="article-actions">
+        <button id="likeBtn" class="btn"><span id="likeIcon">♡</span> Curtir</button>
+        <span id="likeCount" class="muted">0</span>
+      </section>
+
+      <section class="comments">
+        <h3>Comentários</h3>
+        <form id="commentForm" class="comment-form">
+          <input id="commentInput" type="text" maxlength="300" placeholder="Escreva um comentário…" />
+          <button type="submit">Enviar</button>
+        </form>
+        <ul id="commentList" class="comment-list"></ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'projeto-tenente', title: 'Investigadores da Natureza — Projeto Tenente' });
+  </script>
+  <script src="../js/main.js" defer></script>
+</body>
+</html>
