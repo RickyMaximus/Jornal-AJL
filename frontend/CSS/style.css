@@ -294,3 +294,18 @@ hr{ border:0; height:1px; background:var(--border); margin:22px 0 }
 .media img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 img{image-orientation:from-image}
 
+/* ===== Menu mobile ===== */
+.site-nav .menu-toggle{
+  display:none;               /* não aparece no desktop */
+  background:transparent;     /* tira aquele cinza feio */
+  border:0;
+  padding:.5rem .6rem;
+  border-radius:.5rem;
+  font-size:1.25rem;
+  line-height:1;
+}
+@media (max-width: 768px){
+  .site-nav .menu{ display:none; }
+  .site-nav.open .menu{ display:flex; flex-direction:column; gap:.75rem; }
+  .site-nav .menu-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+}
