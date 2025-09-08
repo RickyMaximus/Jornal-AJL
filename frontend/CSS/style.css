@@ -1,0 +1,146 @@
+/* =========================
+   Café com José Leite — Theme
+   ========================= */
+:root{
+  --bg:#F7F1E1; --surface:#E3D8C1; --ink:#2e2a23; --ink-soft:#5c5243;
+  --border:#cdbfa7; --shadow:0 8px 24px rgba(46,42,35,.10);
+  --radius:16px; --gap:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  color:var(--ink); background:#F7F1E1;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92%); margin:0 auto}
+
+/* =========================
+   Header / Navegação
+   ========================= */
+.header{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--border)}
+.site-nav{display:flex; align-items:center; gap:16px; min-height:62px}
+.brand{display:flex; align-items:center; gap:10px; font-weight:700}
+.brand::before{content:""; width:10px; height:10px; border-radius:999px; background:var(--ink-soft); box-shadow:0 0 0 3px rgba(46,42,35,.12) inset}
+
+/* botão hamburguer */
+.menu-toggle{margin-left:auto; background:transparent; border:0; padding:8px 10px; border-radius:10px; cursor:pointer}
+.menu-toggle .bars{display:inline-block; width:22px; height:16px; position:relative}
+.menu-toggle .bars::before,.menu-toggle .bars::after,.menu-toggle .bars span{
+  content:""; position:absolute; left:0; right:0; height:2px; background:var(--ink); border-radius:2px; transition:.15s ease;
+}
+.menu-toggle .bars::before{top:0}
+.menu-toggle .bars span{top:7px}
+.menu-toggle .bars::after{bottom:0}
+
+/* links (força oculto no mobile) */
+.menu{display:none !important; gap:18px; margin-left:auto}
+.menu a{padding:10px 12px; border-radius:10px; transition:transform .12s, background .12s}
+.menu a:hover{background:var(--surface); transform:translateY(-1px)}
+/* abre no mobile quando o .open está no container */
+.site-nav.open .menu{
+  display:flex !important; flex-direction:column; position:absolute; left:0; right:0; top:62px;
+  padding:14px 4%; background:var(--bg); border-bottom:1px solid var(--border);
+}
+@media (min-width:900px){
+  .menu-toggle{display:none}
+  .menu{display:flex !important}
+  .site-nav.open .menu{position:static; flex-direction:row; border:0; padding:0}
+}
+
+/* Compat de artigos antigos que tinham .topbar/.nav */
+.topbar{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--border)}
+.topbar .container{display:flex; align-items:center; gap:16px; min-height:62px}
+.topbar .nav a{padding:10px 12px; border-radius:10px}
+.mobile-only{display:none}
+.desktop-only{display:flex; gap:1.25rem}
+@media (max-width:900px){
+  .desktop-only{display:none}
+  .mobile-only{display:inline-flex}
+}
+
+/* =========================
+   Hero (capa da home e páginas "em breve")
+   ========================= */
+.hero{display:grid; gap:var(--gap); grid-template-columns:1.1fr 1fr; align-items:center; margin:18px 0 26px}
+.hero figure{border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#eae2cf}
+.hero figure img{width:100%; height:100%; aspect-ratio:16/9; object-fit:cover; max-height:420px}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero figure img{max-height:none}
+}
+
+/* =========================
+   Cards (Últimas notícias)
+   ========================= */
+.cards{display:grid; gap:18px; grid-template-columns:1fr; margin-bottom:18px}
+@media (min-width:700px){ .cards{grid-template-columns:repeat(2,1fr)} }
+@media (min-width:1100px){ .cards{grid-template-columns:repeat(3,1fr)} }
+
+.card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:14px; box-shadow:var(--shadow);
+  display:flex; flex-direction:column; gap:12px;
+}
+.card .thumb{border-radius:12px; overflow:hidden; background:#eae2cf}
+.card .thumb img{
+  width:100%; height:100%;
+  aspect-ratio:16/9;               /* 16:9 */
+  object-fit:contain;               /* mostra a imagem inteira (sem cortar) */
+  background:#eae2cf;               /* barras discretas quando precisar */
+}
+.card .body{display:flex; flex-direction:column; gap:8px}
+.card h3{margin:0; font-size:18px}
+.card p{color:var(--ink-soft); margin:0}
+.card .meta{
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  margin-top:6px;
+}
+.card .btn{padding:7px 12px; border-radius:10px; border:1px solid var(--border); background:#fff; cursor:pointer; white-space:nowrap}
+
+/* =========================
+   Página de artigo
+   ========================= */
+.article{padding:28px 0 60px}
+.article .hero img{border-radius:16px; aspect-ratio:16/9; object-fit:cover; background:#eae2cf; max-height:460px}
+.article h1{font-size:clamp(26px,4vw,40px); line-height:1.15; margin:.6rem 0 1rem}
+.article h2{margin:2rem 0 .6rem; font-size:22px}
+.article h3{margin:1.6rem 0 .6rem; font-size:18px}
+.article p{margin:.7rem 0}
+.article .article-meta{color:var(--ink-soft); margin:.3rem 0 1.2rem}
+.media img{width:100%; aspect-ratio:16/9; object-fit:cover; display:block}
+
+/* =========================
+   “Página em breve”
+   ========================= */
+.page-soon .hero{grid-template-columns:1fr 1fr}
+.page-soon .hero figure img{max-height:360px}
+.page-soon p{color:var(--ink-soft)}
+@media (max-width:900px){ .page-soon .hero{grid-template-columns:1fr} }
+
+/* =========================
+   Stats (likes/visitas)
+   ========================= */
+.stats{display:flex; gap:18px; align-items:center; flex-wrap:wrap; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:10px 12px; margin:16px 0 6px}
+.btn-like{background:#fff0; border:1px solid var(--border); padding:8px 14px; border-radius:999px; cursor:pointer}
+.btn-like.liked{border-color:#b99; box-shadow:inset 0 0 0 100vmax rgba(180,70,70,.06)}
+
+/* =========================
+   Footer / utils
+   ========================= */
+.footer{border-top:1px solid var(--border); background:var(--bg); padding:18px 0; margin-top:26px; color:var(--ink-soft)}
+.section-title{margin:26px 0 8px; font-size:22px}
+.section-sub{color:var(--ink-soft); margin:0 0 14px}
+.muted{color:var(--ink-soft)}
+
+#backToTop{
+  position:fixed; right:18px; bottom:18px; z-index:60;
+  display:none; padding:10px 12px; border-radius:999px; border:1px solid var(--border);
+  background:#fff; box-shadow:var(--shadow); cursor:pointer;
+}
+#backToTop.show{display:inline-flex}

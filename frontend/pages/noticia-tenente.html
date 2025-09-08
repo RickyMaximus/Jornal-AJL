@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investigadores da Natureza — Projeto Tenente</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+</head>
+<body class="page-article">
+  <!-- Header unificado (igual ao index) -->
+  <header class="header">
+    <div class="container site-nav">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="./comunicados.html">Comunicados</a>
+        <a href="./eventos.html">Eventos</a>
+        <a href="./tempo.html">Tempo</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+        <span class="bars"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>Por <strong><a href="https://instagram.com/escola_antonio_jose_leite" target="_blank" rel="noopener">@escola_antonio_jose_leite</a></strong></span>
+          <span>•</span><span id="views" class="muted">Visitas: 0</span>
+        </div>
+
+        <h1 class="article-title">Investigadores da Natureza: o projeto da EMEF Tenente Aviador</h1>
+
+        <figure class="hero">
+          <img src="../IMG/predio.jpeg" alt="Alunos em ação de conscientização no entorno da escola" />
+        </figure>
+      </header>
+
+      <!-- TEXTO ORIGINAL (1:1) -->
+      <section class="article-body">
+        <p>Investigadores da Natureza, o projeto da escola EMEF Tenente Aviador que chamou a atenção de moradores do condomínio com sua manifestação.</p>
+
+        <p>No dia 13 de agosto de 2025, foi iniciada uma manifestação pacífica com alunos do terceiro ano do fundamental, no qual consistia em levantar cartazes sobre reciclar, repensar, recusar, reduzir e reutilizar. As crianças gritavam que a calçada é pública e que era para recolher as necessidades de seus animais de estimação.</p>
+
+        <p>Após entrevistar a professora Mel, responsável pelo projeto e PAP (Professora de Apoio Pedagógico), ela nos relata as diversas situações em que os alunos chegavam com os sapatos fedidos e assim que perguntavam sobre o que tinha acontecido, os pequenos ficavam com vergonha de dizer que haviam pisados em fezes dos animais ou até em lixo que são colocados ali - seja por moradores da região, comerciantes locais ou apenas pessoas que passam por lá.</p>
+
+        <p>Nossa entrevistadora Yoná Castro, foi até o local para poder parabenizar sobre essa ação da professora e da escola, aproveitando para fazer algumas perguntas.
+        Assim que questionou sobre o surgimento da ideia, a professora respondeu que surgiu por conta de um livro. 
+        “‘Investigadores da Natureza’ foi um livro em que o cantor famoso, Carlinhos Brown fez, e me inspirou. O livro diz sobre a sustentabilidade e as maneiras de reciclar”.
+        Ela também usou documentos da SME (Secretária Municipal da Educação), com base na BNCC (Base Nacional Comum Curricular) e com o documento de Educação Ambiental. A professora também complementou, dizendo que é PAP e trabalha com as dificuldades de aprendizagem na leitura, escrita e resolução de problemas, fazendo um combinado com os alunos dos 3º anos, com a alfabetização e PAP colaborativo, junto com os colegas especialistas.</p>
+
+        <figure class="media">
+          <img src="../IMG/tenente-livro.jpeg" alt="Capa do livro Investigadores da Natureza" />
+        </figure>
+
+        <p>Assim que propôs essa atividade para os pais e alunos, ela recebeu apoio e uma reação positiva sobre. E, quando teve a amostra cultural, os pais participaram de oficinas nas quais criaram cartazes junto com os filhos.</p>
+
+        <figure class="media">
+          <img src="../IMG/tenente-cartazes-1.jpeg" alt="Acrósticos e cartazes feitos com as famílias" />
+        </figure>
+
+        <figure class="media">
+          <img src="../IMG/tenente-cartazes-2.jpeg" alt="Atividades com os 5 Rs da sustentabilidade" />
+        </figure>
+
+        <p>E hoje, até o dia da entrevista, professores e alunos dizem que houve uma melhora na higiene da calçada.
+        Moradores do condomínio também gravaram essa manifestação, depois foram na escola pedindo panfletos sobre o projeto para distribuírem e falarem sobre a importância da calçada escolar.</p>
+
+        <figure class="media">
+          <img src="../IMG/tenente-cartaz-vermelho.jpeg" alt="Cartaz vermelho com mensagens de conscientização" />
+        </figure>
+
+        <p>E, por fim, a professora Mel comentou que ainda tem cinco ações sobre o projeto e, até o final de novembro, eles têm uma missão: ir à praia para espalhar a sustentabilidade. É um projeto novo, no qual pode tomar uma proporção grande e deixar uma continuação no ano que vem. Também complementou dizendo que procuram por parcerias, seja com mercados ou até moradores.</p>
+      </section>
+      <!-- FIM TEXTO ORIGINAL -->
+
+      <!-- Curtidas + visitas -->
+      <section class="stats">
+        <button id="likeBtn" class="btn-like"><span id="likeIcon">♡</span> Curtir</button>
+        <span id="likeCount" class="muted">0</span>
+        <span id="views" class="muted">Visitas: 0</span>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <!-- scripts (ordem obrigatória) -->
+  <script type="module" src="../js/config.js"></script>
+  <script type="module" src="../js/firebase.js"></script>
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'projeto-tenente', title: 'Investigadores da Natureza — Projeto Tenente' });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

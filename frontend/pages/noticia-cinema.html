@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cinema por apenas R$ 10 — Café com José Leite</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+</head>
+<body class="page-article">
+  <!-- Header unificado (igual ao index) -->
+  <header class="header">
+    <div class="container site-nav">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="./comunicados.html">Comunicados</a>
+        <a href="./eventos.html">Eventos</a>
+        <a href="./tempo.html">Tempo</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+        <span class="bars"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>Escrito por <strong><a href="https://instagram.com/kety__vilasboas" target="_blank" rel="noopener">@kety__vilasboas</a></strong></span>
+          <span>•</span><span id="views" class="muted">Visitas: 0</span>
+        </div>
+
+        <h1 class="article-title">Cinemas por apenas R$ 10 nessa semana?!</h1>
+
+        <figure class="hero">
+          <img src="../IMG/cinema.jpeg" alt="Sala de cinema com promoção de ingressos" />
+        </figure>
+      </header>
+
+      <!-- TEXTO ORIGINAL (1:1) -->
+      <section class="article-body">
+        <p>Isso mesmo, você não leu errado, a CineMark proporcionou para nós nessa última semana de Agosto onde os ingressos de todos os Cine estarão por apenas 10 reais para qualquer filme do catálogo. Corra já e pegue o seu!! Lembrando que, essa promoção começou dia 28/08 e irá somente até 03/09</p>
+
+        <p><strong>Aqui vai ideias de filmes para quem quer ir e não sabe o que ver:</strong></p>
+
+        <p><strong>Quarteto Fantástico</strong> - Um grupo de astronautas passa por uma tempestade cósmica durante seu voo experimental. Ao retornar à Terra, os tripulantes descobrem que possuem novas e bizarras habilidades. Reed Richards pode esticar seu corpo. Sua noiva, Susan Storm, ganha a habilidade de se tornar invisível. Seu irmão mais novo, Johnny Storm, adquiriu o poder de controlar o fogo e voar. Já o piloto Ben Grimm foi transformado em um monstro rochoso. Ao tentar compreender seus poderes, eles têm que lidar com novas ameaças.<br>
+        <em>Classificação: 12 anos.</em></p>
+
+        <p><strong>Os Caras Malvados 2</strong> - Um grupo de criminosos é forçado a participar de um assalto de alto risco, planejado por uma nova equipe de delinquentes femininas.<br>
+        <em>Classificação: Livre</em></p>
+
+        <p><strong>Superman</strong> - Superman embarca em uma jornada para reconciliar sua herança kryptoniana com sua criação humana.<br>
+        <em>Classificação: 14 anos</em></p>
+
+        <p>Fiquem atentos a mais informações e bom filme a todos</p>
+
+        <p><small>Imagem📸| pinterest.com<br>
+        Matéria por ✍️ <a href="https://instagram.com/kety__vilasboas" target="_blank" rel="noopener">@kety__vilasboas</a></small></p>
+      </section>
+      <!-- FIM DO TEXTO ORIGINAL -->
+
+      <!-- curtidas + visitas -->
+      <section class="stats">
+        <button id="likeBtn" class="btn-like"><span id="likeIcon">♡</span> Curtir</button>
+        <span id="likeCount" class="muted">0</span>
+        <span id="views" class="muted">Visitas: 0</span>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <!-- scripts (mantenha SEMPRE estes + o main) -->
+  <script type="module" src="../js/config.js"></script>
+  <script type="module" src="../js/firebase.js"></script>
+  <!-- inicializa visitas/curtir desta notícia -->
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'cinema-10-reais', title: 'Cinemas por apenas R$ 10 nessa semana?!' });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
