@@ -1,0 +1,75 @@
+2<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Um maluco no golfe 2</title>
+  <link rel="stylesheet" href="../CSS/style.css" />
+</head>
+<body class="page-article">
+  <!-- Header unificado (igual ao index) -->
+  <header class="header">
+    <div class="container site-nav">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="./comunicados.html">Comunicados</a>
+        <a href="./eventos.html">Eventos</a>
+        <a href="./tempo.html">Tempo</a>
+        <a href="./todas-noticias.html">Noticias</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+        <span class="bars"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>Escrito por <strong><a href="https://instagram.com/Dino_raaaawr" target="_blank" rel="noopener">@Dino_raaaawr</a></strong></span>
+          <span>•</span><span id="views" class="muted">Visitas: 0</span>
+        </div>
+
+        <h1 class="article-title">Um maluco no golfe 2</h1>
+
+        <figure class="hero">
+          <img src="../IMG/cartaz-filme-adam.jpg" alt="Filme adam " />
+        </figure>
+      </header>
+
+      <!-- TEXTO ORIGINAL (1:1) -->
+      <section class="article-body">
+        <p>Um filme que aborda o peso das consequências, o desejo de querer uma vida melhor para seus filhos ou até o sonho de “salvar” o golfe do avanço da tecnologia.</p>
+
+        <p>A continuação de Um maluco no golfe conta a história de Happy Gilmore (interpretado por Adam Slander), na qual teve uma perda trágica de sua esposa, mãe de seus cinco filhos. Happy ficou com receio de voltar a jogar, com medo. Entrou em dívidas, teve que se separar de seus filhos e ver um futuro deles por água abaixo… Porém, sua filha mais nova teve a chance de ir para a escola de balé em Paris, contudo havia um pequeno porém. Custava mais de 300 mil dólares. Ele estava falido.</p>
+
+        <p>Decidido a fazer diferente, ele pretende voltar e superar seu trauma, mas diversos desafios o cerca. Um deles é: uma pessoa criou um “novo” golfe. Utilizando de matérias para “trapacear”, Gilmore decide enfrentar junto com outras pessoas, através de competições.</p>
+
+        Matéria por ✍️ <a href="https://instagram.com/Dino_raaaawr" target="_blank" rel="noopener">@Dino_raaaawr</a></small></p>
+      </section>
+      <!-- FIM DO TEXTO ORIGINAL -->
+
+      <!-- curtidas + visitas -->
+      <section class="stats">
+        <button id="likeBtn" class="btn-like"><span id="likeIcon">♡</span> Curtir</button>
+        <span id="likeCount" class="muted">0</span>
+        <span id="views" class="muted">Visitas: 0</span>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <!-- scripts (mantenha SEMPRE estes + o main) -->
+  <script type="module" src="../js/config.js"></script>
+  <script type="module" src="../js/firebase.js"></script>
+  <!-- inicializa visitas/curtir desta notícia -->
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'cinema-10-reais', title: 'Cinemas por apenas R$ 10 nessa semana?!' });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
