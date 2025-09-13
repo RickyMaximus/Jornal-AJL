@@ -1,6 +1,6 @@
 // ================================
 // Core de páginas de notícia
-// - contador de visitas (com dedupe 12h por dispositivo)
+// - contador de visitas (1 por usuário - via subcoleção visits/{uid})
 // - like (toggle) com contador em tempo real
 // Requer: firebase.js já ter rodado (window.$fb)
 // ================================
@@ -11,6 +11,7 @@ import {
 
 const waitAuth = () => window.$fb?.authReady ?? Promise.reject("Firebase não inicializado");
 function $el(id){ return document.getElementById(id); }
+function $$views(){ return Array.from(document.querySelectorAll('#views')); }
 
 function setLikedUI(isLiked){
   const likeBtn = $el('likeBtn');
@@ -19,22 +20,12 @@ function setLikedUI(isLiked){
   likeBtn.classList.toggle('liked', !!isLiked);
   likeIcon.textContent = isLiked ? '♥' : '♡';
 }
-function setViewsUI(v){ const views = $el('views'); if (views) views.textContent = `Visitas: ${v ?? 0}`; }
-function setLikesUI(n){ const likeCount = $el('likeCount'); if (likeCount) likeCount.textContent = `${n ?? 0}`; }
-
-/** throttle simples: 1 visita por slug a cada 12h por dispositivo */
-function shouldCountView(slug){
-  try{
-    const key = `cjlv:view:${slug}`;
-    const last = Number(localStorage.getItem(key) || 0);
-    const now = Date.now();
-    const DOZE_H = 12 * 60 * 60 * 1000;
-    if (now - last > DOZE_H){
-      localStorage.setItem(key, String(now));
-      return true;
-    }
-    return false;
-  }catch{ return true; }
+function setViewsUI(v){
+  $$views().forEach(el => el.textContent = `Visitas: ${v ?? 0}`);
+}
+function setLikesUI(n){
+  const likeCount = $el('likeCount');
+  if (likeCount) likeCount.textContent = `${n ?? 0}`;
 }
 
 /**
@@ -52,13 +43,18 @@ export async function initArticlePage(opts){
   const pageRef = doc(db, 'pages', slug);
   await setDoc(pageRef, { title: title || slug }, { merge: true });
 
-  // Incrementa visitas (com dedupe)
-  if (shouldCountView(slug)){
-    try{
-      await updateDoc(pageRef, { views: increment(1) });
-    }catch(e){
-      await setDoc(pageRef, { views: 1 }, { merge: true });
+  // Incrementa visitas (1x por UID)
+  try{
+    const uid = auth?.currentUser?.uid || 'guest';
+    const visitRef = doc(collection(pageRef, 'visits'), uid);
+    const snap = await getDoc(visitRef);
+    if (!snap.exists()){
+      await setDoc(visitRef, { at: Date.now() });
+      try{ await updateDoc(pageRef, { views: increment(1) }); }
+      catch{ await setDoc(pageRef, { views: 1 }, { merge: true }); }
     }
+  }catch(e){
+    console.warn('views (uid) off:', e.message || e);
   }
 
   // Observa contador (views e likesCount) em tempo real
@@ -71,7 +67,6 @@ export async function initArticlePage(opts){
   // Like (toggle)
   const likeBtn = $el('likeBtn');
   if (likeBtn){
-    // garante que temos um UID (pode vir nulo se auth anônima estiver off)
     const uid = window.$fb?.auth?.currentUser?.uid || 'guest';
     const likeRef = doc(collection(pageRef, 'likes'), uid);
 
