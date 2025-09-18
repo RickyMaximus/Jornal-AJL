@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bola de ouro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="../CSS/style.css" />
+
+<!-- GSAP (core + ScrollTrigger) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+</head>
+<body class="page-article">
+  <!-- Header unificado (igual ao index) -->
+  <header class="header">
+    <div class="container site-nav">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="./comunicados.html">Comunicados</a>
+        <a href="./eventos.html">Eventos</a>
+        <a href="./tempo.html">Tempo</a>
+        <a href="./todas-noticias.html">Noticias</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+        <span class="bars"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>Escrito por <strong><a href="https://instagram.com/souz.agp" target="_blank" rel="noopener">@souz.agp</a></strong></span>
+          <span>•</span><span id="views" class="muted">Visitas: 0</span>
+        </div>
+
+        <h1 class="article-title">Bola De Ouro</h1>
+
+        <figure class="thumb filme-thumb">
+          <img src="../IMG/ballon-dor.jpg" alt="bola de ouro " />
+          <p>fonte: <span>Imagem por <strong><a href="https://instagram.com/ballondorofficial" target="_blank" rel="noopener">@ballondorofficial</a></strong></span></p>
+        </figure>
+      </header>
+
+      <!-- TEXTO ORIGINAL (1:1) -->
+        <section class="article-body">
+            <p>
+                A Cerimônia da Bola de Ouro está próxima: conheça os prêmios e seus indicados<br><br>
+
+                A Bola de Ouro — conhecida mundialmente como Ballon d'Or — é a tradicional premiação da revista esportiva France Football, realizada em uma cerimônia de gala para coroar os melhores do futebol. <br><br>
+                A edição deste ano acontecerá no dia 22 de setembro e contará com a entrega de 13 prêmios, entre eles:<br><br>
+
+                Troféu Gerd Müller (masculino e feminino) – Artilharia da temporada;<br>
+                Troféu Yashin (masculino e feminino) – Melhor goleiro(a) do mundo;<br>
+                Troféu Kopa (masculino e feminino) – Melhor jogador(a) sub-21;<br>
+                Prêmio Sócrates – Reconhecimento a ações sociais promovidas por personalidades do futebol;<br>
+                Melhor Clube do Ano (masculino e feminino);<br>
+                Troféu Cruyff (masculino e feminino) – Melhor treinador(a);<br>
+                Bola de Ouro – concedida ao melhor jogador e à melhor jogadora do mundo.<br><br>
+
+                A escolha dos vencedores será feita por jornalistas representantes de cada um dos 100 países mais bem colocados no Ranking FIFA, considerando o desempenho da temporada 2024/2025 (de agosto de 2024 a julho de 2025). <br><br>
+                Este ano, o Brasil tem oito indicados distribuídos nas diferentes categorias: <br><br> 
+                Vinícius Jr. e Raphinha, concorrendo ao prêmio principal; <br> 
+                Marta e Amanda Gutierres, indicadas a Melhor Jogadora do Mundo pelas atuações na Copa América; <br>
+                Arthur Elias, treinador da seleção brasileira, na disputa por Melhor Treinador de Futebol Feminino; <br> 
+                Alisson Becker, indicado ao Troféu Yashin pelas atuações monumentais no Liverpool; <br>
+                Botafogo, concorrendo ao prêmio de Melhor Clube do Ano por atuações em território nacional e internacional.<br><br>
+
+                Agora, confira todos os indicados de cada categoria:<br><br>
+
+                <strong>Troféu Kopa Feminino:</strong><br>
+                Michele Agyemang (Brighton, Inglaterra)<br>
+                Linda Caicedo (Real Madrid, Colômbia)<br>
+                Wieke Kaptein (Chelsea, Holanda)<br>
+                Vicky Lopez (Barcelona, Espanha)<br>
+                Claudia Martinez (Olímpia, Paraguai)<br><br>
+
+                <strong>Troféu Kopa Masculino:</strong><br>
+                Ayyoub Bouaddi (Lille, França)<br>
+                Pau Cubarsi (Barcelona, Espanha)<br>
+                Desiré Doué (PSG, França)<br>
+                Estevão (Palmeiras/Chelsea, Brasil)<br>
+                Dean Huijsen (Bournemouth/Real Madrid, Espanha)<br>
+                Myles Lewis-Skelly (Arsenal, Inglaterra)<br>
+                Rodrigo Mora (Porto, Portugal)<br>
+                João Neves (PSG, Portugal)<br>
+                Lamine Yamal (Barcelona, Espanha)<br>
+                Kenan Yildiz (Juventus, Turquia)<br><br>
+
+                <strong>Troféu Yashin Feminino:</strong><br>
+                Ann-Katrin Berger (Gotham FC, Alemanha)<br>
+                Cata Coll (Barcelona, Espanha)<br>
+                Hannah Hampton (Chelsea, Inglaterra)<br>
+                Chiamaka Nnadozie (Brighton/Paris FC, Nigéria)<br>
+                Daphne van Doomselaar (Arsenal, Holanda)<br><br>
+
+                <strong>Troféu Yashin Masculino:</strong><br>
+                Alisson Becker (Liverpool, Brasil)<br>
+                Bono (Al Hilal, Marrocos)<br>
+                Lucas Chevalier (Lille, França)<br>
+                Courtois (Real Madrid, Bélgica)<br>
+                Donnarumma (PSG/Manchester City, Itália)<br>
+                Dibu Martinez (Aston Villa, Argentina)<br>
+                Oblak (Atlético de Madrid, Eslovênia)<br>
+                David Raya (Arsenal, Espanha)<br>
+                Matz Sels (Nottingham Forest, Bélgica)<br>
+                Yann Sommer (Inter de Milão, Suíça)<br><br>
+
+                <strong>Troféu Cruyff Feminino:</strong><br>
+                Sonia Bompastor (Chelsea)<br>
+                Arthur Helias (Seleção Brasileira)<br>
+                Justine Madugu (Seleção Nigeriana)<br>
+                Renée Slegers (Arsenal)<br>
+                Sarina Wiegman (Seleção Inglesa)<br><br>
+
+                <strong>Troféu Cruyff Masculino:</strong><br>
+                Antonio Conte (Napoli)<br>
+                Luis Enrique (PSG)<br>
+                Hansi Flick (Barcelona)<br>
+                Enzo Maresca (Chelsea)<br>
+                Arne Slot (Liverpool)<br><br>
+
+                <strong>Melhor clube Feminino:</strong><br>
+                Arsenal (Inglaterra)<br>
+                Barcelona (Espanha)<br>
+                Chelsea (Inglaterra)<br>
+                OL Lyonnes (França)<br>
+                Orlando Pride (Estados Unidos)<br><br>
+
+                <strong>Melhor clube Masculino:</strong><br>
+                Barcelona (Espanha)<br>
+                Botafogo (Brasil)<br>
+                Chelsea (Inglaterra)<br>
+                Liverpool (Inglaterra)<br>
+                PSG (França)<br><br>
+
+                <strong>Melhor jogadora:</strong><br>
+                Sandy Baltimore (Chelsea, França)<br>
+                Barbra Banda (Orlando Pride, Zâmbia)<br>
+                Aitana Bonmatí (Barcelona, Espanha)<br>
+                Lucy Bronze (Chelsea, Inglaterra)<br>
+                Klara Bühl (Bayern de Munique, Alemanha)<br>
+                Mariona Caldentey (Arsenal, Espanha)<br>
+                Sofia Cantore (Juventus/WA Spirit, Itália)<br>
+                Steph Catley (Arsenal, Austrália)<br>
+                Melchie Dumornay (Olympique Lyonnés, Haiti)<br>
+                Temwa Chawinga (Kansas City, Malawi)<br>
+                Emily Fox (Arsenal, Estados Unidos)<br>
+                Cristina Girelli (Juventus, Itália)<br>
+                Esther González (Gotham FC, Espanha)<br>
+                Caroline Graham Hansen (Barcelona, Noruega)<br>
+                Hannah Hampton (Chelsea, Inglaterra)<br>
+                Pernille Harder (Bayern Munich, Dinamarca)<br>
+                Patri Guijarro (Barcelona, Espanha)<br>
+                Amanda Gutierres (Palmeiras, Brasil)<br>
+                Lindsey Heaps (Olympique Lyonnés, Estados Unidos)<br>
+                Chloe Kelly (Arsenal, Inglaterra)<br>
+                Marta (Orlando Pride, Brasil)<br>
+                Clara Matéo (Paris FC, França)<br>
+                Ewa Pajor (Barcelona, Polônia)<br>
+                Claudia Pina (Barcelona, Espanha)<br>
+                Alexia Putellas (Barcelona, Espanha)<br>
+                Alessia Russo (Arsenal, Inglaterra)<br>
+                Johanna Rytting Kaneryd (Chelsea, Suécia)<br>
+                Caroline Weir (Real Madrid, Escócia)<br>
+                Leah Williamson (Arsenal, Inglaterra)<br><br>
+
+                <strong>Melhor jogador:</strong><br>
+                Jude Bellingham (Real Madrid, Inglaterra)<br>
+                Ousmane Dembélé (PSG, França)<br>
+                Donnarumma (PSG/Manchester City, Itália)<br>
+                Desiré Doué (PSG, França)<br>
+                Dumfries (Inter de Milão, Holanda)<br>
+                Guirassy (Borussia Dortmund, Guiné)<br>
+                Viktor Gyökeres (Sporting/Arsenal, Suécia)<br>
+                Erling Haaland (Manchester City, Noruega)<br>
+                Hakimi (PSG, Marrocos)<br>
+                Harry Kane (Bayern de Munique, Inglaterra)<br>
+                Kvaratskhelia (Napoli/PSG, Geórgia)<br>
+                Robert Lewandowski (Barcelona, Polônia)<br>
+                Mac Allister (Liverpool, Argentina)<br>
+                Lautaro Martínez (Inter de Milão, Argentina)<br>
+                Kylian Mbappé (Real Madrid, França)<br>
+                McTominay (Napoli, Escócia)<br>
+                Nuno Mendes (PSG, Portugal)<br>
+                João Neves (PSG, Portugal)<br>
+                Vitinha (PSG, Portugal)<br>
+                Michael Olise (Bayern de Munique, França)<br>
+                Cole Palmer (Chelsea, Inglaterra)<br>
+                Pedri (Barcelona, Espanha)<br>
+                Raphinha (Barcelona, Brasil)<br>
+                Declan Rice (Arsenal, Inglaterra)<br>
+                Fabian Ruiz (PSG, Espanha)<br>
+                Mohamed Salah (Liverpool, Egito)<br>
+                Virgil Van Dijk (Liverpool, Holanda)<br>
+                Vinicius Jr. (Real Madrid, Brasil)<br>
+                Florian Wirtz (Bayer Leverkusen/Liverpool, Alemanha)<br>
+                Lamine Yamal (Barcelona, Espanha)<br><br>
+
+                Fora as premiações que não precisam ser votadas — como o Troféu Gerd Muller e o Prêmio Sócrates — existem diversas dúvidas de quem vai ser os melhores dessa temporada. <br><br>
+                No futebol feminino, entre todas as jogadores, as que mais se destacaram nessa temporada foram as jogadoras do Barcelona e do Arsenal, precisamente convocadas da Espanha e Inglaterra na Eurocopa, como as inglesas venceram tanto a Eurocopa quanto a Champions, é bem provável da maioria das premiações ir para a Inglaterra.<br><br>
+
+                E no masculino, as premiações serão divididas entre o PSG e o Barcelona, foram os melhores times dessa temporada e que demonstraram o melhor futebol, com o PSG vencendo a tríplice coroa europeia de forma encantadora e brilhante e o Barça vencendo a tríplice coroa espanhola pra cima do maior rival.<br><br>
+
+                Para o prêmio tradicional especialistas, torcedores e jornalistas estão divididos entre dois nomes: Lamine Yamal e Ousmane Dembélé. Dembélé venceu a Champions League sendo o melhor jogador da competição, onde foi ultra decisivo, em todas as fases da competição e se destacou na Copa do Mundo de Clubes mesmo após voltar de uma lesão, e para muitos, é o favorito. E temos Lamine também teve seus momentos de gênio, decidindo clássicos e encantando o mundo com seu futebol com seus dribles, passes e gols, que deixam a disputa em aberto.<br><br>
+
+                Embora a France Football tenha tomado decisões questionáveis nos últimos anos, a Bola de Ouro continua sendo a premiação mais importante do futebol mundial. Mesmo cercado por diversos critérios sem sentido e debates polêmicos, o prêmio segue influenciando a carreira dos jogadores e treinadores. Permanece sendo um dos maiores marcos do futebol e sempre vai ser, o que resta é torcer para que melhorem os aspectos que tornam o prêmio tão questionado ultimamente.
+            </p>
+
+
+
+            Matéria por ✍️ <a href="https://instagram.com/souz.agp" target="_blank" rel="noopener">@souz.agp</a></small></p>
+        </section>
+      <!-- FIM DO TEXTO ORIGINAL -->
+
+      <!-- curtidas + visitas -->
+        <section class="stats">
+            <button id="likeBtn" class="btn-like"><span id="likeIcon">♡</span> Curtir</button>
+            <span id="likeCount" class="muted">0</span>
+            <span id="views" class="muted">Visitas: 0</span>
+        </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <!-- scripts (mantenha SEMPRE estes + o main) -->
+  <script type="module" src="../js/config.js"></script>
+  <script type="module" src="../js/firebase.js"></script>
+  <!-- inicializa visitas/curtir desta notícia -->
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'um-maluco-2', title: 'Cinemas por apenas R$ 10 nessa semana?!' });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.documentElement.classList.remove('page-exit');
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.body.insertAdjacentHTML('beforeend','<div class="page-overlay"></div>');
+  if(!window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({defaults:{ease:'power4.out'}});
+  tl.to('.page-overlay', {y:'-100%', duration:.7, ease:'power4.inOut'}, 0);
+  tl.from('.header', {opacity:0, y:-30, duration:.45}, .1);
+  tl.from('.hero', {opacity:0, y:30, duration:.55}, .15);
+  const cards = gsap.utils.toArray('.cards article');
+  if(cards.length){
+    tl.from(cards, {opacity:0, y: gsap.utils.wrap([-40,40]), rotate: gsap.utils.wrap([-3,3]), scale:.94, filter:'blur(6px)', duration:.55, stagger:{each:.06, from:'random'}}, .25);
+  }
+  gsap.utils.toArray('.reveal, .card').forEach((el)=>{
+    gsap.fromTo(el, {opacity:0, y:24, filter:'blur(6px)'}, {opacity:1, y:0, filter:'blur(0)', duration:.6, ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 85%'}});
+  });
+  const isInternal = (a)=> a.hostname === location.hostname || a.href.startsWith('./') || a.getAttribute('href')?.startsWith('../');
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('a');
+    if(!a || a.target === '_blank') return;
+    const url = a.getAttribute('href'); if(!url || url.startsWith('#')) return;
+    if(!isInternal(a)) return;
+    e.preventDefault();
+    const tlOut = gsap.timeline({defaults:{ease:'power4.inOut'}, onComplete(){ window.location.href = url; }});
+    const cards = gsap.utils.toArray('.cards article');
+    if(cards.length){ tlOut.to(cards, {opacity:0, y: gsap.utils.wrap([60,-60]), x: gsap.utils.wrap([80,-80]), rotate: gsap.utils.wrap([8,-8]), scale:.96, filter:'blur(6px)', duration:.45, stagger:{each:.03}} ,0); }
+    tlOut.to('.hero', {opacity:0, y:-20, duration:.35}, 0);
+    tlOut.to('.header', {opacity:0, y:-20, duration:.35}, 0.05);
+    tlOut.to('.footer', {opacity:0, y:20, duration:.35}, 0.05);
+    tlOut.to('.page-overlay', {y:'0%', duration:.6}, 0.06);
+  });
+});
+</script>
+
+</body>
+</html>
