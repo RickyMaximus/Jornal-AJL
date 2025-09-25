@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bola de Ouro 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/style.css" />
+
+  <!-- GSAP (core + ScrollTrigger) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body class="page-article">
+  <!-- Header unificado (igual ao index) -->
+  <header class="header">
+    <div class="container site-nav">
+      <a class="brand" href="../index.html">Café com José Leite</a>
+      <nav class="menu">
+        <a href="../index.html">Início</a>
+        <a href="./comunicados.html">Comunicados</a>
+        <a href="./eventos.html">Eventos</a>
+        <a href="./tempo.html">Tempo</a>
+        <a href="./todas-noticias.html">Noticias</a>
+      </nav>
+      <button id="menuToggle" class="menu-toggle" aria-label="Abrir menu">
+        <span class="bars"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container article">
+    <article>
+      <header class="article-header">
+        <div class="article-meta">
+          <span>Escrito por <strong><a href="https://instagram.com/souz.agp" target="_blank" rel="noopener">@souz.agp</a></strong></span>
+          <span>•</span><span id="views" class="muted">Visitas: 0</span>
+        </div>
+
+        <h1 class="article-title">Bola de Ouro 2025</h1>
+
+        <figure class="hero">
+          <img src="../IMG/dembele.jpg" alt="Bola de Ouro 2025" />
+        </figure>
+        <p>Fonte: imagem do site do l'equipe da França.</p>
+        <br>
+      </header>
+
+      <!-- TEXTO DA MATÉRIA (adicione aqui depois) -->
+      <section class="article-body">
+            <p><strong>Ousmane Dembélé leva a Bola de Ouro pra casa. Veja os ganhadores da noite:</strong></p>
+
+            <p>A Cerimônia da Bola de Ouro — conhecida como France Football Ballon d'Or — ocorreu nessa segunda-feira (22) e foi uma festa cheia de novidades. Neste ano foram adicionados mais 3 prêmios para jogadoras do futebol feminino e 1 prêmio para melhor jogada do ano, uma novidade que ninguém estava esperando. Veja os ganhadores dos principais prêmios da noite, como foi a entrega e o ranking dos troféus:</p>
+
+            <h2>Troféu Kopa</h2>
+
+            <p>No Troféu Kopa — entregue para os melhores jogadores sub-21 masculino e feminino do mundo — os vencedores foram:</p>
+
+            <p><strong>Vicky Lopez</strong>, promessa do Barcelona e da Seleção Espanhola, esteve envolvida em 18 participações em gol (13 gols e 5 assistências) e ganhou todos os títulos nacionais. Assumiu o papel de meia versátil do time e mostrou muita maturidade na Eurocopa e em outras competições.</p>
+
+            <p>Em discurso, Vicky destacou o seu trabalho, a sua equipe e a eliminação com a Espanha na final da Eurocopa:</p>
+            <blockquote>
+                "É a recompensa por todo o trabalho que fizemos. É um prêmio individual, mas vai para toda a equipe e para o Barça, o melhor do mundo. Troféus individuais não são os que mais importam para mim. Todas as jogadoras indicadas tinham muita habilidade. Não cabe a mim dizer o que fez a diferença. Acho que fizemos uma Eurocopa muito boa com a Espanha, até a final. A realidade é que fomos eliminadas nos pênaltis..." 
+            </blockquote>
+
+            <p><strong>Lamine Yamal</strong>, pela segunda vez consecutiva, a jovem estrela do Barcelona de apenas 18 anos e da Seleção Espanhola ganhou o Troféu Kopa. Yamal participou diretamente de 52 gols (22 gols e 30 assistências), números completamente fora do normal. Ganhou todos os títulos nacionais sendo uma das principais peças do elenco do Barcelona.</p>
+
+            <p>Em discurso agradeceu por ganhar a premiação novamente:</p>
+            <blockquote>
+                "Obrigado à France Football por este prêmio, é um orgulho estar aqui novamente. Gostaria de agradecer ao Barça, à Seleção; sem eles eu não estaria aqui, à minha família, aos meus companheiros. Espero continuar trabalhando para realizar muitas outras coisas." 
+            </blockquote>
+
+            <h3>Ranking feminino</h3>
+            <ul>
+                <li>1° lugar: Vicky Lopez (Barcelona, Espanha)</li>
+                <li>2° lugar: Linda Caicedo (Real Madrid, Colômbia)</li>
+                <li>3° lugar: Wieke Kaptein (Arsenal, Inglaterra)</li>
+                <li>4° lugar: Michelle Agyemang (Arsenal, Inglaterra)</li>
+                <li>5° lugar: Claudia Martinez (Olimpia, Paraguai)</li>
+            </ul>
+
+            <h3>Ranking masculino</h3>
+            <ul>
+                <li>1° lugar: Lamine Yamal (Barcelona, Espanha)</li>
+                <li>2° lugar: Desiré Doué (PSG, França)</li>
+                <li>3° lugar: João Neves (PSG, Portugal)</li>
+                <li>4° lugar: Estevão (Palmeiras, Brasil)</li>
+                <li>5° lugar: Kenan Yildiz (Juventus, Turquia)</li>
+                <li>6° lugar: Dean Huijsen (Bournemouth, Espanha)</li>
+                <li>7° lugar: Pau Cubarsi (Barcelona, Espanha)</li>
+                <li>8° lugar: Rodrigo Mora (Porto, Portugal)</li>
+                <li>9° lugar (empate): Ayyoub Bouaddi (Lille, França)</li>
+                <li>9° lugar (empate): Myles Lewis-Skelly (Arsenal, Inglaterra)</li>
+            </ul>
+
+            <p>Com destaque para o <strong>Estevão</strong>, g garoto de apenas 18 anos que conquistou o 4° lugar ficando na frente de ótimos jogadores da Europa apenas jogando na América do Sul, pelo desempenho em competições como o Brasileirão, Copa do Brasil, Paulistão, Libertadores e por fim a Copa do Mundo de Clubes. </p>
+
+            <h2>Troféu Johan Cruyff</h2>
+
+            <p>No futebol feminino, o troféu foi concedido à treinadora inglesa <strong>Sarina Wiegman</strong>, comandando a seleção inglesa para o segundo título consecutivo da Eurocopa 2025.</p>
+            <blockquote>
+                "É uma grande honra e sou muito grata. É, acima de tudo, uma conquista coletiva, porque sem a minha equipe, a minha comissão técnica, a Federação, a minha família, como disse no meu discurso, eu não estaria aqui hoje, porque é juntos que alcançamos essas coisas, e essa é a beleza do esporte coletivo. E, sim, eu tive sorte, porque precisava. É também muito especial para este ícone, Johan Cruyff, claro, de quem me sinto muito próxima(...)"
+            </blockquote>
+
+            <p>No futebol masculino, o prêmio foi entregue ao <strong>Luis Enrique</strong>, treinador do PSG que conquistou todos os títulos na França e a inédita Champions League.</p>
+
+            <h2>Troféu Yashin</h2>
+            <p>O Troféu Yashin é o prêmio de melhor goleiro (a) da temporada, foram entregues para: </p>
+
+            <p>No futebol feminino foi entregue para a <strong>Hannah Hampton </strong>, goleira do Chelsea e da seleção inglesa, ganhou o tríplice tríplice coroa inglesa e a também importantíssima na campanha da Inglaterra na Eurocopa, sendo uma das principais goleiras do mundo. Destacou a importância da conquista para as goleiras do futebol feminino que é uma novidade para a premiação.</p>
+
+            <p>No futebol masculino, o prêmio foi entregue ao goleiro <strong> Gianluigi Donnarumma</strong>, goleiro do Manchester City, que na temporada que foi avaliado estava na equipe do Paris Saint-Germain, sendo crucial na campanha do PSG na Liga dos Campeões e sendo muito decisivo. </p>
+            <blockquote>
+                " Voltar aqui é um grande prazer para mim ", disse o goleiro do Man. City em entrevista com o L'Équipe da França. " Por quatro anos, esta foi minha casa e estou muito feliz com esta recepção. Dei tudo aqui, dei tudo pelo Paris, e realmente tenho que agradecer aos torcedores, porque eles realmente me retribuíram." 
+            </blockquote>
+
+            <p>Menção para o goleiro brasileiro Alisson que fez mais uma grande temporada fechando o gol do Liverpool e sendo importante em todas as competições mesmo sendo eliminado em algumas. Vale ressaltar que ele é o nosso camisa 1 e é importante que esteja em bom nível para a Copa do Mundo nos Estados Unidos ano que vem. </p>
+
+            <h3>Ranking masculino</h3>
+            <ul>
+                <li>1° lugar: Gianluigi Donnarumma</li>
+                <li>2° lugar: Alisson Becker</li>
+                <li>3° lugar: Yann Sommer</li>
+                <li>4° lugar: Thibaut Courtois</li>
+                <li>5° lugar: Yassine Bounou</li>
+                <li>6° lugar: David Raya</li>
+                <li>7° lugar: Jan Oblak</li>
+                <li>8° lugar: Emiliano Martinez</li>
+                <li>9° lugar: Lucas Chevalier</li>
+                <li>10° lugar: Matz Sels</li>
+            </ul>
+
+            <h3>Ranking feminino</h3>
+            <ul>
+                <li>1° lugar: Hannah Hampton</li>
+                <li>2° lugar: Ann-Katrin Berger</li>
+                <li>3° lugar: Cata Coll</li>
+                <li>4° lugar: Chiamaka Nnadozie</li>
+                <li>5° lugar: Daphne Van Domselaar</li>
+            </ul>
+
+            <h2>Troféu Gerd Müller</h2>
+            <p>Troféu entregue para o artilheiro e artilheira da temporada, ou seja, os jogadores com mais números de gols do futebol masculino e feminino, entregue para os jogadores: </p>
+
+            <p><strong>Victor Gyokeres</strong> o jogador sueco do Arsenal, porém na temporada 24/25 atuava pelo Sporting, clube de Portugal. Por lá, anotou simplesmente 63 gols em 58 partidas disputadas na temporada por clube e seleção, uma máquina de fazer gols.</p>
+            <p>E na categoria feminina foi para a <strong>Ewa Pajor</strong>, jogadora da Polônia e do Barcelona, com 51 gols em 61 partidas disputadas por clube e seleção, números monstruosos com uma média de quase 1 gol por partida. </p>
+
+            <h2>Clube do Ano</h2>
+            <p>O prêmio de Clube do Ano é para clube com melhor desempenho na temporada, não necessariamente o time que mais ganhou títulos. E o Clube do Ano masculino e feminino foram: </p>
+
+            <p><strong>Paris Saint-Germain</strong>, no futebol masculino, conquistou todos os títulos que podia na França, sendo Supercopa, Copa e a Liga com apenas 2 derrotas, e consagrou a temporada mágica com a conquista da Liga dos Campeões, formando a tríplice coroa europeia. Vale mencionar a chegada até a final da Copa do Mundo de Clubes e a conquista mais recente da Supercopa da UEFA.</p>
+            <p>Uma menção honrosa ao <strong>Botafogo</strong>, clube brasileiro que no recorte da temporada 24/25 fez uma ótima temporada, conquistando a dobradinha de Brasileirão e Libertadores, além de também vencer o PSG na Copa do Mundo de Clubes e ser um dos 2 únicos times a vencerem o PSG na Copa do Mundo. </p>
+            <p>No futebol feminino, o time premiado foi o <strong>Arsenal</strong>, um time que perdeu muitos campeonatos nacionais para o rival, mas fez uma grande campanha de champions e venceu encima do time favoritaço a ganhar a segunda consecutiva. </p>
+
+
+            <h2>Prêmio Sócrates</h2>
+            <p>O Prêmio Sócrates é um troféu batizado em homenagem ao ex jogador brasileiro e ídolo do Corinthians, Sócrates. Entregue para a Fundação com mais visibilidade e ações caridosas de cada ano. </p>
+            <p>Troféu entregue para a Fundação Xana, fundação criada pelo técnico Luis Enrique, sua esposa e filha mais velha. A fundação usa o nome da falecida filha caçula de Luis como homenagem que foi tão comentado essa temporada pela campanha de Luis para vencer a Liga dos Campeões pela filha.  </p>
+            <p>A fundação está em visibilidade e fez diversas campanhas para ajudar crianças com doenças graves e apoio a famílias que sofrem com isso diariamente, dando apoio médico, financeiro e psicológico.  </p>
+
+            <h2>Bola de Ouro</h2>
+            <p>Por fim, o prêmio de melhor jogador e jogadora da temporada, votados por 1 jornalista de cada 100 países do ranking FIFA. Os jogadores vencedores da Bola de Ouro 2025 foram Aitana Bonmatí e Ousmane Dembélé. </p>
+            <p>A meia atacante do Barça vence pela terceira vez consecutiva a Bola de Ouro, onde superou a ex companheira de time e companheira de seleção Mariona Caldentey do Arsenal.  </p>
+
+            <p>Diferente dos últimos anos, Aitana venceu a premiação sem ter ganho nenhum dos troféus principais, perdendo a final da Champions para o Arsenal e a final da Eurocopa para a Inglaterra. Porém, dentro da Espanha, o Barcelona foi bem na temporada, vencendo a tríplice coroa espanhola — Supercopa da Espanha, Liga F e a Copa da Rainha — numa campanha onde marcou 16 gols e 13 assistências em todas as competições oficiais. </p>
+
+            <p>Aitana após conquistar o troféu afirmou: </p>
+            <blockquote>
+                “Todas as outras indicadas são grandes jogadoras, se eu pudesse dividir essa Bola de Ouro eu faria. E receber o prêmio das mãos do Andrés Iniesta, um dos meus ídolos de infância, é especial. Esse é também o primeiro ano com os mesmos prêmios no feminino e no masculino, essa era a igualdade que pedíamos e hoje conseguimos -.” 
+            </blockquote>
+            <p>Menção para as brasileiras Marta e Amanda Gutierres que foram indicadas pela incrível campanha do título da Copa America. </p>
+
+            <h3>Ranking da Bola de Ouro feminina: </h3>
+            <ul>
+                <li>1° lugar: Aitana Bonmatí (Barcelona, Espanha)</li>
+                <li>2° lugar: Mariona Caldentey (Arsenal, Espanha)</li>
+                <li>3° lugar: Alessia Russo (Arsenal, Inglaterra)</li>
+                <li>4° lugar: Alexia Putellas (Barcelona, Espanha)</li>
+                <li>5° lugar: Chloe Kelly (Arsenal, Inglaterra)</li>
+                <li>6° lugar: Patri Guijarro (Barcelona, Espanha)</li>
+                <li>7° lugar: Leah Williamson (Arsenal, Inglaterra)</li>
+                <li>8° lugar: Ewa Pajor (Barcelona, Polônia)</li>
+                <li>9° lugar: Lucy Bronze (Chelsea, Inglaterra)</li>
+                <li>10° lugar: Hanna Hampton (Chelsea, Inglaterra)</li>
+                <li>11° lugar: Claudia Pina (Barcelona, Espanha)</li>
+                <li>12° lugar: Marta (Orlando Pride, Brasil)</li>
+                <li>13° lugar: Caroline Graham Hansen (Barcelona, Noruega)</li>
+                <li>14° lugar: Barbra Banda (Orlando Pride, Zâmbia)</li>
+                <li>15° lugar: Sandy Baltimore (Chelsea, França)</li>
+                <li>16° lugar: Cristiana Girelli (Juventus, Itália)</li>
+                <li>17° lugar: Temwa Chawinga (Kansas City, Malawi)</li>
+                <li>18° lugar: Melchie Dumornay (Lyon, Haiti)</li>
+                <li>19° lugar: Klara Bühl (Bayern de Munique, Alemanha)</li>
+                <li>20° lugar: Pernille Harder (Bayern de Munique, Dinamarca)</li>
+                <li>21° lugar: Amanda Gutierres (Palmeiras, Brasil)</li>
+                <li>22° lugar: Esther Gonzalez (Gotham FC, Espanha)</li>
+                <li>23° lugar: Johanna Kaneryd (Chelsea, Suécia)</li>
+                <li>24° lugar: Sofia Cantore (Washington Spirit, Itália)</li>
+                <li>25° lugar: Emily Fox (Arsenal, EUA)</li>
+                <li>26° lugar: Lindsey Horan (Lyon, EUA)</li>
+                <li>27° lugar: Frida Maanum (Arsenal, Noruega)</li>
+                <li>28° lugar: Clara Mateo (Paris FC, França)</li>
+                <li>29° lugar: Steph Catley (Arsenal, Austrália)</li>
+                <li>30° lugar: Caroline Weir (Real Madrid, Escócia)</li>
+            </ul>
+            <p>E a Bola de Ouro masculina foi entregue para o atacante francês do PSG, Ousmane Dembélé é eleito desbancando Lamine Yamal na votação. Dembélé fez uma excelente temporada por clube onde venceu tudo na Europa e ficou por um triz de conquistar até o Mundo.  </p>
+
+            <p>Vamos aos números: Dembélé marcou 37 gols e 14 assistências na temporada; Foi eleito o melhor jogador da Champions League; Foi eleito o melhor atleta da França; Foi decisivo em todas as fases da Champions League; Gol na fase de grupos; Gol contra o Liverpool nas Oitavas; Assistências contra o Aston Villa nas quartas; Gol e assistências contra o Arsenal nas semis; Assistências na final; Foi decisivo na Copa do Mundo mesmo após voltar de lesão, marcando contra Real Madrid e Bayern de Munique, entre outros. Nas mãos de Luis Enrique, Dembélé virou uma maquina de pressionar e por muito mérito venceu a Bola de Ouro. </p>
+            <p>Muito se falou de Raphinha, que vale a menção, pois o Brasileiro ficou com a 5ª colocação no prêmio, o que beira o absurdo, mas as pesquisas já mostravam isso. Raphinha fez uma temporada de melhor jogador do mundo, só que uma coisa pesou na votação pra ele: Títulos e um eurocentrismo escancarado. Na boca do povo se dizia só de Yamal como o principal jogador do Barcelona e favorito do prêmio, mas quem viu a temporada do Barcelona sabe que o Raphinha foi o jogador mais decisivo do Barça até o último momento. As ruas nunca esqueceram a temporada 24/25 de Raphinha e que merecia muito mais. </p>
+            <p>Outro Brasileiro que foi candidato a Bola de Ouro foi Vinícius Jr, atual melhor do mundo da FIFA, ficou com a 16° colocação. Uma triste colocação para o Vini, mas justa visando o desempenho da última temporada. </p>
+
+            <h3>Ranking da Bola de Ouro masculina: </h3>
+            <ul>
+                <li>1° lugar: Ousmane Dembélé (PSG, França)</li>
+                <li>2° lugar: Lamine Yamal (Barcelona, Espanha)</li>
+                <li>3° lugar: Vitinha (PSG, Portugal)</li>
+                <li>4° lugar: Mohamed Salah (Liverpool, Egito)</li>
+                <li>5° lugar: Raphinha (Barcelona, Brasil)</li>
+                <li>6° lugar: Achraf Hakimi (PSG, Marrocos)</li>
+                <li>7° lugar: Kylian Mbappé (Real Madrid, França)</li>
+                <li>8° lugar: Cole Palmer (Chelsea, Inglaterra)</li>
+                <li>9° lugar: Gianluigi Donnarumma (PSG, Itália)</li>
+                <li>10° lugar: Nuno Mendes (PSG, Portugal)</li>
+                <li>11° lugar: Pedri (Barcelona, Espanha)</li>
+                <li>12° lugar: Khvicha Kvaratskhelia (PSG, Geórgia)</li>
+                <li>13° lugar: Harry Kane (Bayern de Munique, Inglaterra)</li>
+                <li>14° lugar: Désiré Doué (PSG, França)</li>
+                <li>15° lugar: Viktor Gyökeres (Sporting, Suécia)</li>
+                <li>16° lugar: Vinícius Júnior (Real Madrid, Brasil)</li>
+                <li>17° lugar: Robert Lewandowski (Barcelona, Polônia)</li>
+                <li>18° lugar: Scott McTominay (Napoli, Escócia)</li>
+                <li>19° lugar: João Neves (PSG, Portugal)</li>
+                <li>20° lugar: Lautaro Martínez (Inter de Milão, Argentina)</li>
+                <li>21° lugar: Serhou Guirassy (Borussia Dortmund, Guiné)</li>
+                <li>22° lugar: Alexis Mac Allister (Liverpool, Argentina)</li>
+                <li>23° lugar: Jude Bellingham (Real Madrid, Inglaterra)</li>
+                <li>24° lugar: Fabián Ruiz (PSG, Espanha)</li>
+                <li>25° lugar: Denzel Dumfries (Inter de Milão, Holanda)</li>
+                <li>26° lugar: Erling Haaland (Manchester City, Noruega)</li>
+                <li>27° lugar: Declan Rice (Arsenal, Inglaterra)</li>
+                <li>28° lugar: Virgil van Dijk (Liverpool, Holanda)</li>
+                <li>29° lugar: Florian Wirtz (Bayer Leverkusen, Alemanha)</li>
+                <li>30° lugar: Michael Olise (Bayern de Munique, França)</li>
+            </ul>
+            </section>
+
+      <!-- FIM DO TEXTO -->
+
+      <!-- curtidas + visitas -->
+      <section class="stats">
+        <button id="likeBtn" class="btn-like"><span id="likeIcon">♡</span> Curtir</button>
+        <span id="likeCount" class="muted">0</span>
+        <span id="views" class="muted">Visitas: 0</span>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+
+  <!-- scripts (mantenha SEMPRE estes + o main) -->
+  <script type="module" src="../js/config.js"></script>
+  <script type="module" src="../js/firebase.js"></script>
+  <!-- inicializa visitas/curtir desta notícia -->
+  <script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'bola-de-ouro', title: 'Bola de Ouro 2025' });
+  </script>
+  <script type="module" src="../js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  document.documentElement.classList.remove('page-exit');
+  document.addEventListener('DOMContentLoaded', ()=>{
+    document.body.insertAdjacentHTML('beforeend','<div class="page-overlay"></div>');
+    if(!window.gsap) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({defaults:{ease:'power4.out'}});
+    tl.to('.page-overlay', {y:'-100%', duration:.7, ease:'power4.inOut'}, 0);
+    tl.from('.header', {opacity:0, y:-30, duration:.45}, .1);
+    tl.from('.hero', {opacity:0, y:30, duration:.55}, .15);
+    const cards = gsap.utils.toArray('.cards article');
+    if(cards.length){
+      tl.from(cards, {opacity:0, y: gsap.utils.wrap([-40,40]), rotate: gsap.utils.wrap([-3,3]), scale:.94, filter:'blur(6px)', duration:.55, stagger:{each:.06, from:'random'}}, .25);
+    }
+    gsap.utils.toArray('.reveal, .card').forEach((el)=>{
+      gsap.fromTo(el, {opacity:0, y:24, filter:'blur(6px)'}, {opacity:1, y:0, filter:'blur(0)', duration:.6, ease:'power3.out',
+        scrollTrigger:{trigger:el, start:'top 85%'}});
+    });
+    const isInternal = (a)=> a.hostname === location.hostname || a.href.startsWith('./') || a.getAttribute('href')?.startsWith('../');
+    document.addEventListener('click', (e)=>{
+      const a = e.target.closest('a');
+      if(!a || a.target === '_blank') return;
+      const url = a.getAttribute('href'); if(!url || url.startsWith('#')) return;
+      if(!isInternal(a)) return;
+      e.preventDefault();
+      const tlOut = gsap.timeline({defaults:{ease:'power4.inOut'}, onComplete(){ window.location.href = url; }});
+      const cards = gsap.utils.toArray('.cards article');
+      if(cards.length){ tlOut.to(cards, {opacity:0, y: gsap.utils.wrap([60,-60]), x: gsap.utils.wrap([80,-80]), rotate: gsap.utils.wrap([8,-8]), scale:.96, filter:'blur(6px)', duration:.45, stagger:{each:.03}} ,0); }
+      tlOut.to('.hero', {opacity:0, y:-20, duration:.35}, 0);
+      tlOut.to('.header', {opacity:0, y:-20, duration:.35}, 0.05);
+      tlOut.to('.footer', {opacity:0, y:20, duration:.35}, 0.05);
+      tlOut.to('.page-overlay', {y:'0%', duration:.6}, 0.06);
+    });
+  });
+  </script>
+</body>
+</html>
