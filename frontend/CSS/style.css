@@ -226,3 +226,7 @@ nav .nav-link{
   box-shadow: 0 10px 26px rgba(0,0,0,.16) !important;
 }
 
+.filme-thumb img {
+  object-fit: cover;
+  object-position: top;
+}
