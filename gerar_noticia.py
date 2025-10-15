@@ -18,11 +18,31 @@ def ler_docx(caminho):
     conteudo = "\n".join(f"<p>{p}</p>" for p in paragrafos[1:])
     return titulo, conteudo
 
+def ler_texto_manual():
+    print("\n✍️ Cole o texto completo da notícia abaixo.")
+    print("A primeira linha deve ser o título. Quando terminar, digite uma linha com apenas FIM e aperte Enter.\n")
+
+    linhas = []
+    while True:
+        linha = input()
+        if linha.strip().upper() == "FIM":
+            break
+        linhas.append(linha.strip())
+
+    if not linhas:
+        print("❌ Nenhum texto foi inserido.")
+        return None, None
+
+    titulo = linhas[0]
+    conteudo = "\n".join(f"<p>{p}</p>" for p in linhas[1:])
+    return titulo, conteudo
+
 def criar_html(titulo, conteudo, nome_arquivo):
     with open(TEMPLATE_ARQUIVO, "r", encoding="utf-8") as f:
         html = f.read()
 
     soup = BeautifulSoup(html, "html.parser")
+
     titulo_tag = soup.find("h1", {"class": "article-title"})
     if titulo_tag:
         titulo_tag.string = titulo
@@ -32,30 +52,41 @@ def criar_html(titulo, conteudo, nome_arquivo):
         corpo.clear()
         corpo.append(BeautifulSoup(conteudo, "html.parser"))
 
+        # Adiciona o crédito no final
+        autor_html = BeautifulSoup(
+            '<p>Matéria por ✍️ <a href="https://instagram.com/Dino_raaaawr" target="_blank" rel="noopener">@Dino_raaaawr</a></p>',
+            "html.parser"
+        )
+        corpo.append(autor_html)
+
     novo_caminho = os.path.join(PASTA_PAGES, nome_arquivo)
     with open(novo_caminho, "w", encoding="utf-8") as f:
-        f.write(soup.prettify())
+        f.write(soup.encode(formatter='minimal').decode('utf-8'))
+
     print(f"✅ Notícia criada em: {novo_caminho}")
 
-def gerar_card(titulo, nome_arquivo):
+def gerar_card(titulo, nome_arquivo, todas=False):
+    href = f"./pages/{nome_arquivo}" if not todas else f"../pages/{nome_arquivo}"
+    img = f"./IMG/default.jpg" if not todas else f"../IMG/default.jpg"
     return f"""
 <article class="card">
-  <a class="thumb" href="./pages/{nome_arquivo}">
-    <img alt="Imagem da notícia" src="./IMG/default.jpg"/>
+  <a class="thumb" href="{href}">
+    <img alt="Imagem da notícia" src="{img}"/>
   </a>
   <div class="body">
-    <h3><a href="./pages/{nome_arquivo}">{titulo}</a></h3>
+    <h3><a href="{href}">{titulo}</a></h3>
     <p></p>
     <div class="meta">
       <span>Escrito por <strong></strong></span>
-      <a class="btn" href="./pages/{nome_arquivo}">Ler mais</a>
+      <a class="btn" href="{href}">Ler mais</a>
     </div>
   </div>
 </article>
 """.strip()
 
 def atualizar_paginas(nome_arquivo, titulo):
-    card_html = gerar_card(titulo, nome_arquivo)
+    card_html_index = gerar_card(titulo, nome_arquivo, todas=False)
+    card_html_todas = gerar_card(titulo, nome_arquivo, todas=True)
 
     # --- Atualiza INDEX (nova notícia no topo) ---
     if os.path.exists(INDEX_ARQUIVO):
@@ -64,15 +95,15 @@ def atualizar_paginas(nome_arquivo, titulo):
 
         secao = soup.find("section", {"class": "cards"})
         if secao:
-            novo_card = BeautifulSoup(card_html, "html.parser")
+            novo_card = BeautifulSoup(card_html_index, "html.parser")
             cards = secao.find_all("article", class_="card")
-            secao.insert(0, novo_card)  # adiciona no topo
+            secao.insert(0, novo_card)
 
             if len(cards) >= 6:
-                cards[-1].decompose()  # remove o último card
+                cards[-1].decompose()
 
         with open(INDEX_ARQUIVO, "w", encoding="utf-8") as f:
-            f.write(soup.prettify())
+            f.write(soup.encode(formatter='minimal').decode('utf-8'))
         print("🏠 index.html atualizado!")
 
     # --- Atualiza TODAS-NOTICIAS (nova no final) ---
@@ -82,25 +113,31 @@ def atualizar_paginas(nome_arquivo, titulo):
 
         secao = soup.find("section", {"class": "cards"})
         if secao:
-            novo_card = BeautifulSoup(card_html, "html.parser")
-            secao.append(novo_card)  # adiciona no final
+            novo_card = BeautifulSoup(card_html_todas, "html.parser")
+            secao.append(novo_card)
 
         with open(TODAS_ARQUIVO, "w", encoding="utf-8") as f:
-            f.write(soup.prettify())
+            f.write(soup.encode(formatter='minimal').decode('utf-8'))
         print("📰 todas-noticias.html atualizado!")
 
 def main():
-    caminho_docx = input("Arraste aqui o arquivo .docx da notícia e aperte Enter: ").strip()
+    caminho_docx = input("Arraste o arquivo .docx ou pressione Enter para colar o texto manualmente: ").strip()
     caminho_docx = caminho_docx.strip('"').strip("'")
-    if caminho_docx.startswith("& "):
-        caminho_docx = caminho_docx[2:].strip()
-    caminho_docx = caminho_docx.replace("& ", "").replace("'", "").replace('"', "").strip()
 
-    if not os.path.exists(caminho_docx):
-        print(f"❌ Arquivo não encontrado: {caminho_docx}")
+    titulo, conteudo = None, None
+
+    if caminho_docx:
+        if not os.path.exists(caminho_docx):
+            print(f"❌ Arquivo não encontrado: {caminho_docx}")
+            return
+        titulo, conteudo = ler_docx(caminho_docx)
+    else:
+        titulo, conteudo = ler_texto_manual()
+
+    if not titulo or not conteudo:
+        print("❌ Nenhum conteúdo válido encontrado.")
         return
 
-    titulo, conteudo = ler_docx(caminho_docx)
     nome_arquivo = f"{slugify(titulo)}.html"
     criar_html(titulo, conteudo, nome_arquivo)
     atualizar_paginas(nome_arquivo, titulo)
