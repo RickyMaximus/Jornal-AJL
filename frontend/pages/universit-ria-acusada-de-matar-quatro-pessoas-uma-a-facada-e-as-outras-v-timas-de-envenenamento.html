@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Serial Killer</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../CSS/style.css" rel="stylesheet">
+<!-- GSAP (core + ScrollTrigger) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</link></head>
+<body class="page-article">
+<!-- Header unificado (igual ao index) -->
+<header class="header">
+<div class="container site-nav">
+<a class="brand" href="../index.html">Café com José Leite</a>
+<nav class="menu">
+<a href="../index.html">Início</a>
+<a href="./comunicados.html">Comunicados</a>
+<a href="./eventos.html">Eventos</a>
+<a href="./tempo.html">Tempo</a>
+<a href="./todas-noticias.html">Noticias</a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" id="menuToggle">
+<span class="bars"><span></span></span>
+</button>
+</div>
+</header>
+<main class="container article">
+<article>
+<header class="article-header">
+<div class="article-meta">
+<span>Escrito por <strong><a href="https://instagram.com/Dino_raaaawr" rel="noopener" target="_blank">@Dino_raaaawr</a></strong></span>
+<span>•</span><span class="muted" id="views">Visitas: 0</span>
+</div>
+<h1 class="article-title">Universitária é acusada de matar quatro pessoas, uma a facada e as outras vítimas de envenenamento.</h1>
+<figure class="hero">
+<img alt="Filme adam " src="../IMG/mosaico-serial-killer.gif"/>
+<p>Imagem: G1</p>
+</figure>
+</header>
+<!-- TEXTO ORIGINAL (1:1) -->
+<section class="article-body"><p>Ana Paula Veloso Fernandes, de 36 anos e estudante de Direito, morava em Rio de Janeiro (RJ) e veio para Guarulhos (SP), alugando uma casa de fundo com Marcelo Hari, porém, a acusada comenta que foi ameaçada pelo senhorio, decidindo então se proteger e proteger sua família (dois filhos adolescentes e seus cachorros).</p>
+<p>Em discussão e em seu depoimento, a mulher contou que ela havia levado uma faca e o teria atingido abaixo da axila. Acrescenta também a surpresa do homem e, antes de ir embora, enrolou o homem em um lençol e a faca em outro, jogando-a fora no dia seguinte, por um bueiro.</p>
+<p>Suas próximas vítimas, Maria Aparecida Rodrigues, Neil Côrrea da Silva e Haydar Mhazres, foram por envenenamento, de diversos tipos e motivos. 
+Além de ter comparsas: sua irmã gêmea e uma ex-amiga da universidade, que encomendou uma morte.</p>
+<p>Alguns casos de mulheres serial killers de mais reconhecimento são: Condessa do Sangue, uma nobre húngara do século XVI, onde torturou e assassinou centenas de jovens camponeses. Acreditavam também que a jovem tomava banho com o sangue de suas vítimas para manter sua juventude.</p>
+<p>Outro caso que fez abrir uma discussão na mídia é o de Aileen Wuornos, uma prostituta que matou sete homens no século passado, alegando que queriam a estuprar. Seu caso fez abrir estereótipo de serial killer como masculino e ganhando destaque na internet.</p>
+<p>Você pode estar pensando que a Suzane Von Richthofen pode ser uma serial killer, porém não.</p>
+<p>Para se enquadrar nesse estereótipo, a pessoa teria que possuir dois ou mais homicídios separados, motivação por trás do crime, padrão de comportamento, vítimas semelhantes (conhecidas, vulneráveis ou até familiares) e com uma pausa de tempo, que é dada como “resfriamento”.</p>
+<p>Importante avisar que tem diferentes tipos de assassinos. Temos assassinos em massa, quando matam diversas pessoas em um único evento, sem intervalos.</p>
+<p>Assassinato em sequência é o tipo que comete diversos homícidios em diferentes locais, mas comum curto período de resfriamento.</p>
+<p>E temos o homicídio comum, que acontece por motivos óbvios. Seja briga, crime passional ou roubo, sem repetição.</p><p>Matéria por ✍️ <a href="https://instagram.com/Dino_raaaawr" rel="noopener" target="_blank">@Dino_raaaawr</a></p></section>
+<!-- FIM DO TEXTO ORIGINAL -->
+<!-- curtidas + visitas -->
+<section class="stats">
+<button class="btn-like" id="likeBtn"><span id="likeIcon">♡</span> Curtir</button>
+<span class="muted" id="likeCount">0</span>
+<span class="muted" id="views">Visitas: 0</span>
+</section>
+</article>
+</main>
+<footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+<!-- scripts (mantenha SEMPRE estes + o main) -->
+<script src="../js/config.js" type="module"></script>
+<script src="../js/firebase.js" type="module"></script>
+<!-- inicializa visitas/curtir desta notícia -->
+<script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'um-maluco-2', title: 'Cinemas por apenas R$ 10 nessa semana?!' });
+  </script>
+<script src="../js/main.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.documentElement.classList.remove('page-exit');
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.body.insertAdjacentHTML('beforeend','<div class="page-overlay"></div>');
+  if(!window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({defaults:{ease:'power4.out'}});
+  tl.to('.page-overlay', {y:'-100%', duration:.7, ease:'power4.inOut'}, 0);
+  tl.from('.header', {opacity:0, y:-30, duration:.45}, .1);
+  tl.from('.hero', {opacity:0, y:30, duration:.55}, .15);
+  const cards = gsap.utils.toArray('.cards article');
+  if(cards.length){
+    tl.from(cards, {opacity:0, y: gsap.utils.wrap([-40,40]), rotate: gsap.utils.wrap([-3,3]), scale:.94, filter:'blur(6px)', duration:.55, stagger:{each:.06, from:'random'}}, .25);
+  }
+  gsap.utils.toArray('.reveal, .card').forEach((el)=>{
+    gsap.fromTo(el, {opacity:0, y:24, filter:'blur(6px)'}, {opacity:1, y:0, filter:'blur(0)', duration:.6, ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 85%'}});
+  });
+  const isInternal = (a)=> a.hostname === location.hostname || a.href.startsWith('./') || a.getAttribute('href')?.startsWith('../');
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('a');
+    if(!a || a.target === '_blank') return;
+    const url = a.getAttribute('href'); if(!url || url.startsWith('#')) return;
+    if(!isInternal(a)) return;
+    e.preventDefault();
+    const tlOut = gsap.timeline({defaults:{ease:'power4.inOut'}, onComplete(){ window.location.href = url; }});
+    const cards = gsap.utils.toArray('.cards article');
+    if(cards.length){ tlOut.to(cards, {opacity:0, y: gsap.utils.wrap([60,-60]), x: gsap.utils.wrap([80,-80]), rotate: gsap.utils.wrap([8,-8]), scale:.96, filter:'blur(6px)', duration:.45, stagger:{each:.03}} ,0); }
+    tlOut.to('.hero', {opacity:0, y:-20, duration:.35}, 0);
+    tlOut.to('.header', {opacity:0, y:-20, duration:.35}, 0.05);
+    tlOut.to('.footer', {opacity:0, y:20, duration:.35}, 0.05);
+    tlOut.to('.page-overlay', {y:'0%', duration:.6}, 0.06);
+  });
+});
+</script>
+</body>
+</html>
