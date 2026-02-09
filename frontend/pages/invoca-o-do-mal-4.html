@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Invocação Do Mal 4</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="../CSS/style.css" rel="stylesheet">
+<!-- GSAP (core + ScrollTrigger) -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</link></head>
+<body class="page-article">
+<!-- Header unificado (igual ao index) -->
+<header class="header">
+<div class="container site-nav">
+<a class="brand" href="../index.html">Café com José Leite</a>
+<nav class="menu">
+<a href="../index.html">Início</a>
+<a href="./comunicados.html">Comunicados</a>
+<a href="./eventos.html">Eventos</a>
+<a href="./tempo.html">Tempo</a>
+<a href="./todas-noticias.html">Noticias</a>
+</nav>
+<button aria-label="Abrir menu" class="menu-toggle" id="menuToggle">
+<span class="bars"><span></span></span>
+</button>
+</div>
+</header>
+<main class="container article">
+<article>
+<header class="article-header">
+<div class="article-meta">
+<span>Escrito por <strong><a href="https://instagram.com/juju13.15_" rel="noopener" target="_blank">@juju13.15_</a></strong></span>
+<span>•</span><span class="muted" id="views">Visitas: 0</span>
+</div>
+<h1 class="article-title">Invocação do Mal 4</h1>
+<figure class="hero">
+<img alt="Filme invocao-do-mal-4 " src="../IMG/invocaçao-do-mal.jpg"/>
+</figure>
+</header>
+<!-- TEXTO ORIGINAL (1:1) -->
+<section class="article-body"><p></p>
+<p>Invocação do mal 4 estreou no Brasil em 4 de setembro de 2025. Ele foi dirigido por Michael Chaves, com James Wan e Peter Safran na produção.</p>
+<p></p>
+<p>O filme volta a usar como base um caso real: o da família Smurl, da Pensilvânia, que entre 1973 e 1989 alegaram ter sofrido perturbações paranormais em sua casa.</p>
+<p></p>
+<p>Ed e Lorraine Warren, aparecem mais velhos, em um mometo que consideram a aposentadoria, mas depois de muitos acontecimentos, acabam aceitando investigar essa nova ameaça.</p>
+<p></p>
+<p>O casal é acompanhado pela filha Judy Warren e seu namorado Tony Spera, que também se envolvem no perigoso ritual que dá título ao filme.</p>
+<p></p>
+<p>Logo em sua estreia, invocação do mal 4 levou mais de 370 mil pessoas aos cinemas brasileiros em apenas um dia, arrecadando R$ 7,6 milhões e, em poucas semanas, ultrapassou a marca de R$ 76 milhões e mais de 3,6 milhões de ingressos vendidos, números que o consagram como o maior filme de terror da história do país e sendo um sucesso de bilheteria.</p>
+<p></p>
+<p>O filme entrega não apenas sustos, mas também um fechamento emocional para os fãs que acompanham o casal desde 2013.</p><p>Matéria por ✍️ <a href="https://instagram.com/juju13.15_" rel="noopener" target="_blank">@juju13.15_</a></p></section>
+<!-- FIM DO TEXTO ORIGINAL -->
+<!-- curtidas + visitas -->
+<section class="stats">
+<button class="btn-like" id="likeBtn"><span id="likeIcon">♡</span> Curtir</button>
+<span class="muted" id="likeCount">0</span>
+<span class="muted" id="views">Visitas: 0</span>
+</section>
+</article>
+</main>
+<footer class="footer"><div class="container">© 2025 Café com José Leite</div></footer>
+<!-- scripts (mantenha SEMPRE estes + o main) -->
+<script src="../js/config.js" type="module"></script>
+<script src="../js/firebase.js" type="module"></script>
+<!-- inicializa visitas/curtir desta notícia -->
+<script type="module">
+    import { initArticlePage } from '../js/noticia-core.js';
+    initArticlePage({ slug: 'um-maluco-2', title: 'Cinemas por apenas R$ 10 nessa semana?!' });
+  </script>
+<script src="../js/main.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.documentElement.classList.remove('page-exit');
+document.addEventListener('DOMContentLoaded', ()=>{
+  document.body.insertAdjacentHTML('beforeend','<div class="page-overlay"></div>');
+  if(!window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const tl = gsap.timeline({defaults:{ease:'power4.out'}});
+  tl.to('.page-overlay', {y:'-100%', duration:.7, ease:'power4.inOut'}, 0);
+  tl.from('.header', {opacity:0, y:-30, duration:.45}, .1);
+  tl.from('.hero', {opacity:0, y:30, duration:.55}, .15);
+  const cards = gsap.utils.toArray('.cards article');
+  if(cards.length){
+    tl.from(cards, {opacity:0, y: gsap.utils.wrap([-40,40]), rotate: gsap.utils.wrap([-3,3]), scale:.94, filter:'blur(6px)', duration:.55, stagger:{each:.06, from:'random'}}, .25);
+  }
+  gsap.utils.toArray('.reveal, .card').forEach((el)=>{
+    gsap.fromTo(el, {opacity:0, y:24, filter:'blur(6px)'}, {opacity:1, y:0, filter:'blur(0)', duration:.6, ease:'power3.out',
+      scrollTrigger:{trigger:el, start:'top 85%'}});
+  });
+  const isInternal = (a)=> a.hostname === location.hostname || a.href.startsWith('./') || a.getAttribute('href')?.startsWith('../');
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('a');
+    if(!a || a.target === '_blank') return;
+    const url = a.getAttribute('href'); if(!url || url.startsWith('#')) return;
+    if(!isInternal(a)) return;
+    e.preventDefault();
+    const tlOut = gsap.timeline({defaults:{ease:'power4.inOut'}, onComplete(){ window.location.href = url; }});
+    const cards = gsap.utils.toArray('.cards article');
+    if(cards.length){ tlOut.to(cards, {opacity:0, y: gsap.utils.wrap([60,-60]), x: gsap.utils.wrap([80,-80]), rotate: gsap.utils.wrap([8,-8]), scale:.96, filter:'blur(6px)', duration:.45, stagger:{each:.03}} ,0); }
+    tlOut.to('.hero', {opacity:0, y:-20, duration:.35}, 0);
+    tlOut.to('.header', {opacity:0, y:-20, duration:.35}, 0.05);
+    tlOut.to('.footer', {opacity:0, y:20, duration:.35}, 0.05);
+    tlOut.to('.page-overlay', {y:'0%', duration:.6}, 0.06);
+  });
+});
+</script>
+</body>
+</html>
